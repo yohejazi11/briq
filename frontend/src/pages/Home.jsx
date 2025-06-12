@@ -290,11 +290,11 @@ function Home() {
                             <p className="text-gray-700 text-lg">{t('home.contact_subtext') || "نسعد بتواصلك معنا لأي استفسار أو طلب عرض سعر."}</p>
                             <div className="mt-8 flex items-center gap-3 text-[#686D76]">
                                 <svg width="24" height="24" fill="none" stroke="currentColor" className="mr-2"><path d="M21 10.5a8.38 8.38 0 01-.9 3.8c-.6 1.2-1.5 2.3-2.6 3.1-1.1.8-2.4 1.3-3.8 1.3s-2.7-.5-3.8-1.3c-1.1-.8-2-1.9-2.6-3.1A8.38 8.38 0 013 10.5C3 6.4 6.4 3 10.5 3S18 6.4 18 10.5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                                <span className="font-semibold">info@company.com</span>
+                                <span className="font-semibold">info@briq-1.sa</span>
                             </div>
                             <div className="mt-2 flex items-center gap-3 text-[#686D76]">
                                 <svg width="24" height="24" fill="none" stroke="currentColor" className="mr-2"><path d="M22 16.92V19a2 2 0 01-2 2h-1a19.72 19.72 0 01-8.7-3.1A19.5 19.5 0 013 5V4a2 2 0 012-2h2.09a2 2 0 012 1.72c.13 1.13.37 2.24.7 3.32a2 2 0 01-.45 2.11l-1.27 1.27a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c1.08.33 2.19.57 3.32.7A2 2 0 0122 16.92z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                                <span className="font-semibold">+966 50 000 0000</span>
+                                <span className="font-semibold">+966 532344964</span>
                             </div>
                         </div>
 
@@ -375,13 +375,13 @@ function Home() {
                 </section>
 
                 <a
-                    href="https://wa.me/966500000000" // ← عدل الرقم إلى رقمك
+                    href="https://wa.me/966532344964" // ← عدل الرقم إلى رقمك
                     target="_blank"
                     rel="noopener noreferrer"
                     className="fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300"
                     aria-label="WhatsApp"
                 >
-                    <img src="/whatsapp-icon.png" alt="WhatsApp" className="w-6 h-6" />
+                    <img src="/whatsapp.png" alt="WhatsApp" className="w-6 h-6" />
                 </a>
 
 
