@@ -1,0 +1,60 @@
+{
+    "home": {
+        "welcome": "Welcome to Our Company",
+        "tagline": "We build the future with expertise and creativity",
+        "about_title": "About Us",
+        "about_text": "In a world where dreams are built on solid ground, we lay the foundation of trust. We’re more than just a construction company — we’re your partner in a journey of excellence and innovation. With years of experience and teams that master both precision and vision, we deliver comprehensive building solutions that redefine quality. Our mission goes beyond completing projects — it's about leaving a lasting mark.",
+        "services_title": "Our Services",
+        "services": {
+            "construction": "Construction & Building",
+            "construction_desc": "From laying the first brick to handing over the keys, we deliver comprehensive construction solutions tailored to every project's scale and purpose. Our expertise spans across residential villas, commercial towers, and public infrastructure, all executed with strict adherence to safety, quality, and efficiency standards. Every structure we build is a testament to our craftsmanship and commitment to lasting value.",
+            "management": "Project Management",
+            "management_desc": "We offer full-spectrum project management services that ensure control, transparency, and delivery within budget and deadlines. Our approach integrates cost planning, risk mitigation, contractor coordination, and quality assurance — all under the guidance of experienced professionals who monitor every detail from pre-construction to final handover.",
+            "design": "Interior & Exterior Design",
+            "design_desc": "Our design philosophy blends form, function, and personality. Whether you’re envisioning a warm home interior or a striking building façade, we craft designs that reflect your identity and lifestyle. Using modern tools and materials, we deliver creative, practical, and aesthetic spaces that leave a lasting impression.",
+            "renovation": "Renovation & Restoration",
+            "renovation_desc": "We specialize in reviving old spaces with a fresh vision. Our renovation services combine structural enhancement with modern design to turn outdated properties into elegant, functional environments. Whether it’s a full overhaul or subtle upgrades, we preserve the essence of the space while elevating it to today’s standards."
+        },
+        "features": {
+            "quality": {
+                "title": "Uncompromising Quality",
+                "description": "We adhere to the highest standards of quality in every detail—from carefully selected materials to precise execution. Our projects are not just accomplishments, but long-lasting marks of excellence."
+            },
+            "commitment": {
+                "title": "Precision in Timing, Commitment in Promises",
+                "description": "We don’t make promises lightly—we deliver on them. Time management is embedded in our professional culture because we believe respecting our client’s time is the first mark of true professionalism."
+            },
+            "team": {
+                "title": "An Elite Team",
+                "description": "Behind every successful project stands a team driven by experience, passion, and vision. Our engineers and technicians bring deep practical knowledge and a creative spirit that pursues excellence."
+            },
+            "innovation": {
+                "title": "Solutions That Speak the Language of the Future",
+                "description": "We innovate, not imitate. We study your needs and translate them into smart, integrated design ideas that combine functionality with beauty—and fulfill the aspirations of tomorrow, not just the needs of today."
+            }
+        },
+        "our_works": "Our Works",
+        "contact_title": "Contact Us",
+        "message": "Write your message here...",
+        "name": "Name",
+        "phone": "Phone Number",
+        "map_location": "Our Location on the Map",
+        "why_us": "Why Choose Us?",
+        "why_us_text": "Because we believe every project deserves true care and expertise.",
+        "quality": "Quality",
+        "quality_text": "We are committed to delivering the highest quality at every project stage.",
+        "commitment": "Commitment",
+        "commitment_text": "We deliver projects on schedule and within agreed budgets.",
+        "professionalism": "Professionalism",
+        "professionalism_text": "Our team is highly trained to execute all projects with maximum efficiency.",
+        "innovation": "Innovation",
+        "innovation_text": "We offer innovative solutions that meet client needs and add value to their projects."
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact"
+    }
+}

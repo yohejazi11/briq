@@ -1,0 +1,25 @@
+{
+    "home": {
+        "welcome": "Welcome to Our Company",
+        "tagline": "We build the future with expertise and creativity",
+        "about_title": "About Us",
+        "about_text": "A company specialized in general contracting and construction with broad experience.",
+        "services_title": "Our Services",
+        "why_us": "What Makes Us Special?",
+        "why_us_text": "We offer quality, commitment, and precision in execution.",
+        "our_works": "Our Works",
+        "contact_title": "Contact Us",
+        "message": "Write your message here...",
+        "name": "Name",
+        "phone": "Phone Number",
+        "map_location": "Our Location on the Map"
+    },
+    
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact"
+    }
+}
