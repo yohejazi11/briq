@@ -65,12 +65,14 @@ function Home() {
                 <meta name="keywords" content="شركة البناء, مقاولات, بناء, مشاريع, تصميم داخلي, تجديد منازل, السعودية" />
                 <meta property="og:title" content={t('home.seo_title') || 'شركة البناء | أفضل حلول البناء والمقاولات'} />
                 <meta property="og:description" content={t('home.seo_description') || 'شركة البناء تقدم أفضل خدمات البناء والمقاولات، إدارة المشاريع، التصميم الداخلي، وتجديد المنازل في السعودية.'} />
+                {/* عدّل رابط الصورة هنا لأي صورة تريدها (يفضل 1200x630px) */}
                 <meta property="og:image" content="/logo.png" />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://your-domain.com/" />
+                <meta property="og:url" content="https://briqfront.onrender.com/" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={t('home.seo_title') || 'شركة البناء | أفضل حلول البناء والمقاولات'} />
                 <meta name="twitter:description" content={t('home.seo_description') || 'شركة البناء تقدم أفضل خدمات البناء والمقاولات، إدارة المشاريع، التصميم الداخلي، وتجديد المنازل في السعودية.'} />
+                {/* عدّل رابط الصورة هنا لأي صورة تريدها (يفضل 1200x630px) */}
                 <meta name="twitter:image" content="/logo.png" />
             </Helmet>
             <div className="font-sans ">
