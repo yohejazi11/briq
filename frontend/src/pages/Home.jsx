@@ -19,7 +19,7 @@ function Home() {
     }, [i18n.language]);
 
     useEffect(() => {
-        axios.get("http://localhost/buildcompany/api/get_projects.php") // غيّر المسار حسب الحاجة
+        axios.get("http://localhost/buildcompany/backend/api/get_projects.php") // غيّر المسار حسب الحاجة
             .then(res => {
                 if (res.data.status === "success") {
                     setProjects(res.data.data);
