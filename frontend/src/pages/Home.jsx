@@ -65,15 +65,17 @@ function Home() {
                 <meta name="keywords" content="شركة البناء, مقاولات, بناء, مشاريع, تصميم داخلي, تجديد منازل, السعودية" />
                 <meta property="og:title" content={t('home.seo_title') || 'شركة البناء | أفضل حلول البناء والمقاولات'} />
                 <meta property="og:description" content={t('home.seo_description') || 'شركة البناء تقدم أفضل خدمات البناء والمقاولات، إدارة المشاريع، التصميم الداخلي، وتجديد المنازل في السعودية.'} />
-                {/* عدّل رابط الصورة هنا لأي صورة تريدها (يفضل 1200x630px) */}
-                <meta property="og:image" content="https://briqfront.onrender.com/logo.png" />
+                <meta property="og:image" content="https://briqfront.onrender.com/build1.jpeg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://briqfront.onrender.com/" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={t('home.seo_title') || 'شركة البناء | أفضل حلول البناء والمقاولات'} />
                 <meta name="twitter:description" content={t('home.seo_description') || 'شركة البناء تقدم أفضل خدمات البناء والمقاولات، إدارة المشاريع، التصميم الداخلي، وتجديد المنازل في السعودية.'} />
-                {/* عدّل رابط الصورة هنا لأي صورة تريدها (يفضل 1200x630px) */}
-                <meta name="twitter:image" content="https://briqfront.onrender.com/logo.png" />
+                <meta name="twitter:image" content="https://briqfront.onrender.com/build1.jpeg" />
+                <meta name="twitter:image:width" content="1200" />
+                <meta name="twitter:image:height" content="630" />
             </Helmet>
             <div className="font-sans ">
                 <Header />
