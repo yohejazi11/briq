@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import axios from "axios";
 import { motion } from "framer-motion";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -14,11 +15,25 @@ function Home() {
     const [loading, setLoading] = useState(true);
 
     const { t, i18n } = useTranslation();
-
+    const location = useLocation();
 
     useEffect(() => {
         document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
     }, [i18n.language]);
+
+    // Scroll to section if scrollTo param exists
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const scrollTo = params.get('scrollTo');
+        if (scrollTo) {
+            setTimeout(() => {
+                const el = document.getElementById(scrollTo);
+                if (el) {
+                    el.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 300);
+        }
+    }, [location]);
 
     useEffect(() => {
         axios.get("http://localhost/buildcompany/backend/api/get_projects.php") // غيّر المسار حسب الحاجة
@@ -37,13 +52,13 @@ function Home() {
         e.preventDefault();
         const formData = new FormData(e.target);
 
-        fetch("http://localhost/buildcompany/api/contact.php", {
+        fetch("http://localhost/buildcompany/backend/api/contact.php", {
             method: "POST",
             body: formData,
         })
             .then((res) => res.json())
             .then((data) => {
-                if (data.success) {
+                if (data.status=="success") {
                     alert("✅ تم إرسال رسالتك بنجاح!");
                     e.target.reset();
                 } else {
@@ -60,19 +75,19 @@ function Home() {
     return (
         <HelmetProvider>
             <Helmet>
-                <title>{t('home.seo_title') || 'شركة البناء | أفضل حلول البناء والمقاولات'}</title>
-                <meta name="description" content={t('home.seo_description') || 'شركة البناء تقدم أفضل خدمات البناء والمقاولات، إدارة المشاريع، التصميم الداخلي، وتجديد المنازل في السعودية.'} />
-                <meta name="keywords" content="شركة البناء, مقاولات, بناء, مشاريع, تصميم داخلي, تجديد منازل, السعودية" />
-                <meta property="og:title" content={t('home.seo_title') || 'شركة البناء | أفضل حلول البناء والمقاولات'} />
-                <meta property="og:description" content={t('home.seo_description') || 'شركة البناء تقدم أفضل خدمات البناء والمقاولات، إدارة المشاريع، التصميم الداخلي، وتجديد المنازل في السعودية.'} />
+                <title>{t('home.seo_title') || 'شركة بي آر آي كيو للبناء | أفضل حلول البناء والمقاولات'}</title>
+                <meta name="description" content={t('home.seo_description') || ' شركة بي آر آي كيو للبناء والمقاولات  تقدم أفضل خدمات البناء والمقاولات، إدارة المشاريع، التصميم الداخلي، وتجديد المنازل في السعودية.'} />
+                <meta name="keywords" content="شركة بي آر آي كيو للبناء  , مقاولات, بناء, مشاريع, تصميم داخلي, تجديد منازل, السعودية" />
+                <meta property="og:title" content={t('home.seo_title') || ' شركة بي آر آي كيو للبناء والمقاولات  | أفضل حلول البناء والمقاولات'} />
+                <meta property="og:description" content={t('home.seo_description') || ' شركة بي آر آي كيو للبناء والمقاولات  تقدم أفضل خدمات البناء والمقاولات، إدارة المشاريع، التصميم الداخلي، وتجديد المنازل في السعودية.'} />
                 <meta property="og:image" content="https://briqfront.onrender.com/build1.jpeg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://briqfront.onrender.com/" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={t('home.seo_title') || 'شركة البناء | أفضل حلول البناء والمقاولات'} />
-                <meta name="twitter:description" content={t('home.seo_description') || 'شركة البناء تقدم أفضل خدمات البناء والمقاولات، إدارة المشاريع، التصميم الداخلي، وتجديد المنازل في السعودية.'} />
+                <meta name="twitter:title" content={t('home.seo_title') || 'شركة بي آر آي كيو للبناء | أفضل حلول البناء والمقاولات'} />
+                <meta name="twitter:description" content={t('home.seo_description') || 'شركة بي آر آي كيو للبناء تقدم أفضل خدمات البناء والمقاولات، إدارة المشاريع، التصميم الداخلي، وتجديد المنازل في السعودية.'} />
                 <meta name="twitter:image" content="https://briqfront.onrender.com/build1.jpeg" />
                 <meta name="twitter:image:width" content="1200" />
                 <meta name="twitter:image:height" content="630" />
@@ -99,56 +114,55 @@ function Home() {
                                 className="px-6 py-4 text-[#E6B31E] font-bold border-[#E6B31E] border-[1.5px] rounded-md shadow-lg hover:bg-[#E6B31E] hover:text-white transition"
                                 whileHover={{ scale: 1.08 }}
                             >
-                                تواصل معنا
+                                {t("home.contact_title")}
+                                
                             </motion.a>
                         </div>
                     </motion.div>
                 </section>
 
                 {/* About Us */}
-                <section className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center">
+                <section className="w-full min-h-screen flex flex-col gap-y-4 md:flex-row items-center justify-center overflow-x-hidden">
                     <motion.div
-                        className="w-[60%] text-center flex flex-col items-start p-10 max-sm:w-[100%]"
+                        className="w-full md:w-[60%] text-center flex flex-col items-start p-10"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#E6B31E]">{t('home.about_title')}</h2>
-                        <p className="w-[60%] max-sm:w-[100%] text-gray-800 font-semibold text-[1.2rem] text-right bg-white/70 rounded-lg p-4 shadow">
+                        <p className={`w-full md:w-[60%] text-gray-800 font-semibold text-[1.2rem] max-sm:text-[18px] max-sm:p-2 ${i18n.language==="ar"?"text-right":"text-left"}  bg-white/70 rounded-lg p-4 shadow`}>
                             {t('home.about_text')}
                         </p>
                     </motion.div>
                     <motion.div
-                        className="relative w-[40%] h-[100vh] bg-[#686D76] first-bg main-shadow max-sm:hidden"
+                        className="relative w-full md:w-[40%] h-[600px] md:h-[100vh] flex items-center justify-center bg-[#686D76] first-bg main-shadow max-sm:hidden"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="absolute w-[40vw] h-[40vw] top-[50%] translate-y-[-50%] translate-x-[50%] main-shadow">
+                        <div className={`relative w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] md:w-[40vw] md:h-[40vw] flex items-center ${i18n.language === "ar" ? "translate-x-[25%]" : "translate-x-[-25%]"}  justify-center main-shadow`}>
                             <img
-                                className="w-[100%] h-[100%]"
-                                src="build1.jpeg"
+                                className="w-full h-full object-cover"
+                                src="bg11.jpg"
                                 alt="مشروع بناء حديث - شركة البناء"
-                            >
-                            </img>
+                            />
+                            <div className={`absolute inset-0 z-10 bg-black opacity-35 `}></div>
                         </div>
-
-                        <div className="absolute w-[40vw] h-[40vw]  top-[50%] translate-y-[-50%] translate-x-[50%] z-10 bg-black opacity-55"></div>
                     </motion.div>
                 </section>
 
                 {/* Why Us - تصميم ونصوص محسنة */}
-                <section className="w-full min-h-[60vh] bg-gradient-to-br from-[#f8fafc] via-[#f3f4f6] to-[#fff] py-20 px-4">
+                <section className="w-full min-h-[60vh] bg-gradient-to-br from-[#f8fafc] via-[#f3f4f6] to-[#fff] py-20 px-4 overflow-x-hidden">
                     <div className="max-w-7xl mx-auto text-center">
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-[#E6B31E] drop-shadow-lg">
                             {t("home.why_us") || "لماذا نحن؟"}
                         </h2>
                         <p className="text-gray-700 max-w-2xl mx-auto mb-14 text-lg font-medium leading-relaxed">
-                            نحن في <span className="text-[#E6B31E] font-bold">شركة البناء</span> نؤمن أن نجاح مشاريع عملائنا هو نجاحنا الحقيقي. نتميز بخبرة عميقة، التزام صارم بالجودة، وابتكار مستمر لنقدم لك أفضل الحلول في عالم البناء والمقاولات.
+                             {t("home.why_us_text_1")} <span className="text-[#E6B31E] font-bold">{t("home.company_name")} </span> {t("home.why_us_text_2") || "نقدم حلولاً متكاملة في مجال البناء والمقاولات، حيث نركز على الجودة والابتكار في كل مشروع نقوم به."}
                         </p>
-                        <div className="grid gap-8 grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto">
+                        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full">
                             {[
                                 {
                                     icon: "quality.png",
@@ -195,13 +209,13 @@ function Home() {
                 </section>
 
                 {/* Services */}
-                <section className="w-full min-h-screen bg-[#686D76] py-16 px-4 second-bg">
+                <section className="w-full min-h-screen bg-[#686D76] py-16 px-4 second-bg overflow-x-hidden">
                     <div className="max-w-6xl mx-auto text-center">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#E6B31E] mb-12">
                             {t('home.services_title')}
                         </h2>
 
-                        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-2">
+                        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 w-full">
                             {[
                                 {
                                     icon: "construction.png",
@@ -243,7 +257,7 @@ function Home() {
                 </section>
 
                 {/* Our Works */}
-                <section className="w-full min-h-screen p-10 main-bg bg-gray-50 third-bg">
+                <section className="w-full min-h-screen p-10 main-bg bg-gray-50 third-bg" id="projects">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#E6B31E]">
                         {t('home.our_works')}
                     </h2>
@@ -252,8 +266,9 @@ function Home() {
                             <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-[#E6B31E]"></div>
                         </div>
                     ) : (
+                        <>
                         <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-                            {projects.map((project, index) => (
+                            {projects.slice(0, 6).map((project, index) => (
                                 <motion.div
                                     key={project.id}
                                     initial={{ opacity: 0, y: 40 }}
@@ -261,11 +276,19 @@ function Home() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     whileHover={{ scale: 1.03, boxShadow: "0 8px 32px #E6B31E33" }}
+                                    onClick={() => window.location.href = `/project/${project.id}`}
+                                    style={{ cursor: 'pointer' }}
                                 >
                                     <ProjectCard project={project} delay={index * 100} />
                                 </motion.div>
                             ))}
                         </div>
+                        {projects.length > 6 && (
+                            <div className="flex justify-center mt-8">
+                                <a href="/projects" className="px-8 py-3 bg-[#E6B31E] text-white font-bold rounded shadow hover:bg-[#c99c19] transition">{t("home.show_more")}</a>
+                            </div>
+                        )}
+                        </>
                     )}
                 </section>
 

@@ -40,7 +40,9 @@
         "phone": "Phone Number",
         "map_location": "Our Location on the Map",
         "why_us": "Why Choose Us?",
-        "why_us_text": "Because we believe every project deserves true care and expertise.",
+        "why_us_text_1": "Because at",
+        "company_name": "BRIQ",
+        "why_us_text_2": "We believe every project deserves care, and every idea is worth turning into a tangible achievement. We blend expertise with creativity to deliver solutions that exceed expectations and earn lasting trust.",
         "quality": "Quality",
         "quality_text": "We are committed to delivering the highest quality at every project stage.",
         "commitment": "Commitment",
@@ -48,13 +50,35 @@
         "professionalism": "Professionalism",
         "professionalism_text": "Our team is highly trained to execute all projects with maximum efficiency.",
         "innovation": "Innovation",
-        "innovation_text": "We offer innovative solutions that meet client needs and add value to their projects."
+        "innovation_text": "We offer innovative solutions that meet client needs and add value to their projects.",
+        "contact_subtext": "If you have any inquiries or wish to discuss your next project, don't hesitate to reach out. We are here to assist you.",
+        "send_message": "Send Message",
+        "show_more": "Show More"
     },
     "nav": {
         "home": "Home",
         "about": "About",
         "services": "Services",
         "projects": "Projects",
-        "contact": "Contact"
+        "contact": "Contact",
+        "dashboard": "Dashboard",
+        "logout": "Logout",
+        "login": "Login",
+        "register": "Register"
+    },
+    "footer": {
+        "about": "About Us",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact Us",
+        "privacy_policy": "Privacy Policy",
+        "terms_of_service": "Terms of Service",
+        "follow_us": "Follow Us",
+        "email": "Email Us at",
+        "phone": "Call Us at",
+        "address": "Our Address",
+        "links": "Useful Links",
+        "description": "We are a leading construction company dedicated to delivering high-quality projects that meet the needs of our clients. Our team of experts is committed to excellence in every aspect of construction, from design to execution. We believe in building lasting relationships with our clients based on trust and transparency.",
+        "rights": " BRIQ. All rights reserved."
     }
 }

@@ -35,10 +35,10 @@ const Footer = () => {
                 <div>
                     <h3 className="text-lg font-bold text-[#E6B31E] mb-5">{t("footer.contact")}</h3>
                     <p className="text-sm text-gray-300 mb-2">
-                        <strong>{t("footer.email")}:</strong> info@example.com
+                        <strong>{t("footer.email")}:</strong> info@briq-1.sa
                     </p>
                     <p className="text-sm text-gray-300 mb-2">
-                        <strong>{t("footer.phone")}:</strong> +966 555 555 555
+                        <strong>{t("footer.phone")}:</strong> +966 532344964
                     </p>
                     <p className="text-sm text-gray-300">{t("footer.address")}</p>
                 </div>
